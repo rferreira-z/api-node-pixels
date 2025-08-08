@@ -1,0 +1,48 @@
+{
+  "name": "api-node-pixels",
+  "version": "1.0.0",
+  "description": "Api to generate pixels image using canvas and publish on chain",
+  "license": "ISC",
+  "author": "Ricardo Ferreira",
+  "scripts": {
+    "build": "tsc --project tsconfig.build.json && cp -r src/public dist",
+    "start": "tsc --project tsconfig.build.json && cp -r src/public dist && node dist/server.js",
+    "dev": "nodemon --watch 'src/**/*' --exec 'ts-node' src/server.ts",
+    "lint": "eslint 'src/**/*'",
+    "test": "jest -c=./jest.config.ts --no-cache --runInBand",
+    "test:watch": "jest --watch",
+    "docker:build": "docker build -t api-node-nft-integration .",
+    "docker:run": "docker run -p 3000:3000 api-node-nft-integration"
+  },
+  "devDependencies": {
+    "@jest/globals": "^30.0.5",
+    "@types/express": "^5.0.3",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.1.0",
+    "dotenv": "^17.2.0",
+    "eslint": "^9.31.0",
+    "express": "^5.1.0",
+    "husky": "^9.1.7",
+    "install": "^0.13.0",
+    "jest": "^30.0.5",
+    "nodemon": "^3.1.10",
+    "npm": "^11.4.2",
+    "prettier": "^3.6.2",
+    "ts-jest": "^29.4.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "@types/pino": "^7.0.4",
+    "@types/pino-http": "^5.8.4",
+    "canvas": "^3.1.2",
+    "cross-env": "^10.0.0",
+    "decimal.js": "^10.6.0",
+    "ethers": "^6.15.0",
+    "mongoose": "^8.16.4",
+    "node-cron": "^4.2.1",
+    "pinata": "^2.4.9",
+    "pino": "^9.7.0",
+    "pino-http": "^10.5.0"
+  }
+}

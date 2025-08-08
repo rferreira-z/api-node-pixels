@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json", // Optional: extend your main tsconfig
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/**/*.spec.ts",
+    "src/contracts/**/*"
+  ]
+}
